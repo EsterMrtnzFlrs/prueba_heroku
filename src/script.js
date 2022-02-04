@@ -1,14 +1,24 @@
-const word_array = ["JUEGO", "TALAR", "BAILE", "ANDAR", "MONTE", "PLAYA", "PLATA", "ARBOL", "QUESO"];
-
-const randomNum = (min, max) =>{
-    return Math.trunc(Math.random() * (max - min + 1));
-}
-
-let picked_word = word_array[randomNum(0, word_array.length)];
-console.log(picked_word);
+import Word from "./Word.js";
+import Game from "./Game.js";
 
 
-/* Sacar palabra por prompt */
+const wordsCollection = new Word(["JUEGO", "TALAR", "BAILE", "ANDAR", "MONTE", "PLAYA", "PLATA", "ARBOL", "QUESO"]);
+const pickedWord = wordsCollection.getRandomWord();
+console.log(pickedWord);
+
+const game = new Game(pickedWord);
+
+
+Array.from(document.getElementsByClassName("key")).forEach(element => element.addEventListener("click", (e)=>{
+    game.newKeyPressed(e.target.value);
+}));
+
+document.addEventListener("keydown", (e)=>{
+    game.newKeyPressed(e.code);
+});
+
+/*
+
 let prompt_word;
 
 do {
@@ -23,7 +33,7 @@ do {
 
 console.log(played_word);
 
-/* Comparar palabras */
+
 
 let correctLetters = 0;
 
@@ -81,7 +91,7 @@ const pushLetter = (e) => {
 
 
 
-/* */
+
 
 const paintBoxGreen = (e) => {
     e.classList.add("box-green");
@@ -98,3 +108,4 @@ const paintBoxOrange = (e) => {
 const changeBox = (e, col_position) => {
     e.classList.add(`col${col_position}`);
 }
+*/

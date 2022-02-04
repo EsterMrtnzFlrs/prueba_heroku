@@ -50,7 +50,7 @@ h1 {
     background-color: chocolate;
 }
 
-.box {
+.cell {
     border: 1px solid #adadad;
     width: 3vw;
     height: 6vh;
@@ -99,15 +99,15 @@ h1 {
     
 }
 
-.box-orange {
+.cell-orange {
     background-color: #F8961E;
     color: white;
 }
-.box-green {
+.cell-green {
     background-color: #74A94C;
     color: #ffffff;
 }
-.box-grey {
+.cell-grey {
     background-color: #858585;
     color: #ffffff;
 }
